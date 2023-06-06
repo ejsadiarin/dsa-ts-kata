@@ -32,7 +32,9 @@ function binarySearch(nums: number[], target: number): number {
     let left: number = 0;
     let right: number = nums.length - 1;
 
+    // loop if left is less than right
     while (left <= right) {
+        // get midpoint by gettings the average (floored)
         const mid: number = Math.floor((left + right) / 2);
 
         if (nums[mid] === target) return mid;
@@ -42,3 +44,9 @@ function binarySearch(nums: number[], target: number): number {
 
     return -1;
 }
+
+const exampleArr: number[] = [
+    -10, -7, -2, -3, 1, 4, 5, 7, 10, 19, 20, 100, 120, 121, 123, 145, 890,
+];
+
+console.log(binarySearch(exampleArr, 123)); // output: 14, meaning 14th index
